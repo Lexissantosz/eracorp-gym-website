@@ -25,6 +25,13 @@
   font-family: "Inter", sans-serif;
 }
 
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -32,7 +39,6 @@ html {
 body {
   background: var(--bg-main);
   color: var(--text-light);
-  overflow-x: hidden;
   position: relative;
 }
 
@@ -50,8 +56,8 @@ body::before {
     transparent 70%
   );
   filter: blur(120px);
-  animation: none;
   z-index: -1;
+  pointer-events: none;
 }
 
 body::after {
@@ -68,8 +74,13 @@ body::after {
     transparent 70%
   );
   filter: blur(120px);
-  animation: none;
   z-index: -1;
+  pointer-events: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
 }
 
 .site-loader {
@@ -215,6 +226,7 @@ body::after {
   display: flex;
   align-items: center;
   gap: 10px;
+  text-decoration: none;
 }
 
 .brand-icon {
@@ -287,6 +299,7 @@ body::after {
   font-weight: 700;
   box-shadow: 0 10px 26px rgba(123, 44, 255, 0.30);
   transition: 0.35s ease;
+  text-decoration: none;
 }
 
 .btn-purple:hover {
@@ -303,6 +316,7 @@ body::after {
   padding: 13px 24px;
   font-weight: 700;
   transition: var(--transition);
+  text-decoration: none;
 }
 
 .btn-outline-custom:hover {
@@ -340,6 +354,7 @@ body::after {
 
 .hero-content {
   max-width: 650px;
+  width: 100%;
 }
 
 .hero-badge {
@@ -356,13 +371,14 @@ body::after {
 }
 
 .hero h1 {
-  font-size: clamp(3rem, 6vw, 5.8rem);
+  font-size: clamp(2.6rem, 6vw, 5.8rem);
   font-weight: 900;
   line-height: 0.95;
   margin-bottom: 20px;
   letter-spacing: -2px;
   text-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   animation: heroFade 0.9s ease forwards;
+  word-break: break-word;
 }
 
 @keyframes heroFade {
@@ -514,7 +530,6 @@ body::after {
   );
   transform: rotate(18deg);
   filter: blur(18px);
-  animation: none;
   pointer-events: none;
 }
 
@@ -1471,8 +1486,28 @@ body::after {
     font-size: 1.6rem;
   }
 
+  .hero .container,
+  .hero-container,
+  .hero-content {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
   .hero h1 {
-    font-size: 3rem;
+    font-size: 2.8rem;
+    word-break: break-word;
+  }
+
+  .hero-text {
+    font-size: 1rem;
+  }
+
+  .hero-buttons {
+    gap: 10px;
+  }
+
+  .hero-info-item {
+    font-size: 0.95rem;
   }
 
   .main-price {
@@ -1565,4 +1600,3 @@ body::after {
     width: 100%;
   }
 }
-
